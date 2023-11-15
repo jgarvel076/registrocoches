@@ -6,25 +6,29 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true" id="ion-content">
   <ion-input [(ngModel)] = "filtro" placeholder="Introduce el nombre"></ion-input>
-  <ion-grid>
-    <ion-row>
-      <ng-container *ngFor="let user of users | async">
-        <ion-col *ngIf="filtro=='' || user.Nombre.startsWith(filtro)" size-xl="2" size-lg="3" size_md="4" sie-xs="12">
-          <ion-card>
-            <ion-card-content>
-              <p>{{user.id}}</p>
-              <p>{{user.Nombre}}</p>
-              <p>{{user.Apellido}}</p>
-              <p>{{user.email}}</p>
-              <p>{{user.Genero}}</p>
-              <p>{{user.Marca}}, {{user.Modelo}}, {{user.yearcoche}}, {{user.VIN}}</p>
-              <ion-avatar><img [src]="user.imagen"></ion-avatar>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ng-container>
-    </ion-row>
-  </ion-grid>
+    <ion-card content class="textovertical">
+      <p>Cambie la horientación a horizontal para mas información</p>
+    </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ng-container *ngFor="let user of users | async">
+          <ion-col *ngIf="filtro=='' || user.Nombre.startsWith(filtro)" size-xl="2" size-lg="3" size_md="4" sie-xs="12">
+            <ion-card>
+              <ion-card-content>
+                <p>{{user.id}}</p>
+                <p>{{user.Nombre}}</p>
+                <p>{{user.Apellido}}</p>
+                <p class="email">{{user.email}}</p>
+                <p class="genero">{{user.Genero}}</p>
+                <p>{{user.Marca}}, {{user.Modelo}}, {{user.yearcoche}}, {{user.VIN}}</p>
+                <ion-avatar><img [src]="user.imagen"></ion-avatar>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ng-container>
+      </ion-row>
+    </ion-grid>
 </ion-content>

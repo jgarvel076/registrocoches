@@ -26,10 +26,43 @@
   text-decoration: none;
 }
 
-.ion-header{
-  color: black;
+.textovertical{
+  --background:yellow ;
 }
 
-#ion-content{
-  color: grey;
+/*#ion-content{
+  --background: rgb(255, 220, 220);
+}*/
+
+@media only screen and (max-width: 400px) {
+  ion-content {
+    --background: rgb(231, 231, 227);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  ion-content {
+    --background: rgb(176, 176, 250);
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+  ion-content {
+    --background: rgb(57, 131, 57);
+  }
+}
+
+@media (orientation: portrait) {
+  .email {
+    display: none;
+  }
+  .genero {
+    display: none;
+  }
+}
+
+@media (orientation: landscape){
+  .textovertical{
+    display: none;
+  }
 }
